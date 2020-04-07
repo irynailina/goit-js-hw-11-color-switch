@@ -21,8 +21,6 @@ const refs = {
 
 const colorChangeTimer = {
   start() {
-    this.isActive = true;
-    this.colorId = null;
     this.colorId = setInterval(() => {
       const randomIndex = randomIntegerFromInterval(0, colors.length - 1);
       refs.body.style.backgroundColor = colors[randomIndex];
