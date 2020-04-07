@@ -30,7 +30,6 @@ const colorChangeTimer = {
   stop() {
     clearInterval(this.colorId);
     this.colorId = null;
-    refs.body.style.backgroundColor = null;
   }
 };
 
