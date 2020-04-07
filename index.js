@@ -21,10 +21,12 @@ const refs = {
 
 const colorChangeTimer = {
   start() {
+    if(this.colorId) return;
     this.colorId = setInterval(() => {
       const randomIndex = randomIntegerFromInterval(0, colors.length - 1);
       refs.body.style.backgroundColor = colors[randomIndex];
     }, 1000);
+    
   },
 
   stop() {
