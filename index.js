@@ -20,12 +20,9 @@ const refs = {
 };
 
 const colorChangeTimer = {
-  isActive: false,
   start() {
-    if (this.isActive) {
-      return;
-    }
     this.isActive = true;
+    this.colorId = null;
     this.colorId = setInterval(() => {
       const randomIndex = randomIntegerFromInterval(0, colors.length - 1);
       refs.body.style.backgroundColor = colors[randomIndex];
@@ -34,7 +31,7 @@ const colorChangeTimer = {
 
   stop() {
     clearInterval(this.colorId);
-    this.isActive = false;
+    this.colorId = null;
     refs.body.style.backgroundColor = null;
   }
 };
